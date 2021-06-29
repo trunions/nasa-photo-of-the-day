@@ -2,6 +2,35 @@ import React, {useState, useEffect} from "react";
 import "./App.css";
 import axios from 'axios'
 import NasaInfo from "./components/nasaInfo";
+import styled from 'styled-components'
+
+const StyledDiv = styled.div`
+  background-color:black;
+  width:100%;
+  height:100%;
+  `
+
+const StyledH1 = styled.h1`
+  color: white;
+  font-size:3rem;
+  
+`;
+
+const HeaderDiv = styled.div`
+  display:flex;
+  justify-content:center;
+  `
+
+  const ImgDiv = styled.div`
+    display:flex;
+    justify-content:center;
+    `
+
+    const NasaInfoDiv = styled.div`
+    text-align:center;
+    color:white;
+    padding:5% 5%;
+    `
 
 
 function App() {
@@ -21,13 +50,17 @@ function App() {
 
 
   return (
-    <div className="App">
-      <h1>NASA Photo of the Day</h1>
+    <StyledDiv>
+      <HeaderDiv>
+      <StyledH1>NASA Photo of the Day</StyledH1>
+      </HeaderDiv>
+      <ImgDiv>
       <img src={nasaData.url} alt={nasaData.title} />
-      <div>
+      </ImgDiv>
+      <NasaInfoDiv>
         <NasaInfo nasaData={nasaData} />
-      </div>
-    </div>
+        </NasaInfoDiv>
+    </StyledDiv>
   );
 }
 

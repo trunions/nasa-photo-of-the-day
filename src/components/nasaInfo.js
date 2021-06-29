@@ -1,9 +1,14 @@
 import React from 'react'
+import styled from 'styled-components'
 
+
+const StyledH2 = styled.h2`
+    color:white;
+    `
 function NasaInfo(props) {
     return(
         <div>
-            <h2>{props.nasaData.title}</h2>
+            <StyledH2>{props.nasaData.title}</StyledH2>
             <p>{props.nasaData.date}</p>
             <p>{props.nasaData.explanation}</p>
         </div>
